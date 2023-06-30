@@ -1,7 +1,11 @@
+import nltk
+nltk.download('stopwords')
+
 # Library to have connection to your gmail
 import smtplib
 # library to extract the entities form your resume
 from pyresparser import ResumeParser
+
 
 
 #creates SMTP session
@@ -10,7 +14,7 @@ s = smtplib.SMTP('smtp.gmail.com', 587)
 s.starttls ()
 
 # Authentication
-s.login("","")
+s.login("jobmatch28@gmail.com","jobmatch1234")
 
 # give a subject
 SUBJECT = "Interview Call"
@@ -43,7 +47,7 @@ Skills_matched = [ele for ele in actual_skills
 
 
 # check the number of skills matched
-if (len(data_analyst) >= 4 ):
+if (len(Skills_matched) >= 4 ):
     
     print("he is eligible")
     # create a text that is to sent in an email
@@ -51,7 +55,7 @@ if (len(data_analyst) >= 4 ):
     # send mail
     message = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
     # send the mail
-    s.sendmail("",email, message)
+    s.sendmail("jobmatch28@gmail.com",email, message)
     # quit the session
     s.quit()
 else:
@@ -59,7 +63,5 @@ else:
     
     TEXT = "Hello "+name + ",\n\n"+"Thanks for applying to the job post AI/ML Developer, "+"Your candidature is rejected. "+"\n\n\n\n Thanks and Regards, "+"\n\n Talent acquisition Team, \n\n Smartbridge"
     message = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
-    s.sendmail("", email, message)
+    s.sendmail("jobmatch28@gmail.com", email, message)
     s.quit()
-
-
