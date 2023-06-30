@@ -10,7 +10,7 @@ s.starttls()
 
 SUBJECT = "Interview Call"
 
-python_skills - ["ml", "ai", "matplotlib", "seabon",
+python_skills = ["ml", "ai", "matplotlib", "seabon",
                  "python", "reression", "algorithms"
                  "Pandas", "data analysis", "keras",
                  "tensorflow", "artificial intelligence",
@@ -27,7 +27,7 @@ def applyjob():
     return render_template("apply_job.html")
 @app.route('/fill_form')
 def fillform():
-    return render_template("form. html")
+    return render_template("form.html")
 @app.route('/uploader', methods = ['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
@@ -43,25 +43,25 @@ def upload_file():
         Skills_matched = [ele for ele in actual_skills if(ele in python_skills)]
         if(len(Skills_matched) >= 4 ):
             print("he is eligible")
-            s.login("", "")
+            s.login("jobmatch28@gmail.com", "jobmatch1234")
             TEXT = "Hello "+name + ",\n\n"+ """Thanks for applying to the
             job post AI/ML Developer, Your skils matches our requirement.
             Kindly Let us know the available time for initial round of interview.
             \n\n\n\n Thanks and Regards, In In Talent acquistition Team, In In Smartbridge"""
             message = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
-            s.sendmail("", email, message)
+            s.sendmail("jobmatch28@gmail.com", email, message)
             s.quit()
             return render_template('form.html',prediction =
                                    """Thanks for applying youwill be mailed about
                                    your candidature""")
         else:
             print("sorry we cant process your candidature")
-            s.login("","")
+            s.login("jobmatch28@gmail.com","jobmatch1234")
             TEXT = "Hello "+name + ", \n\n"+ """Thanks for applying to the job post AI/ML
             Developer , Your candidature is rejected.
             \n\n\n\n Thanks and Regards, \n\n Talent acquistition Team, \n\n Startbridge"""
             message = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
-            s.sendmail("", enall, message)
+            s.sendmail("jobmatch28@gmail.com", email, message)
             s.quit()
             return render_template('form.html',prediction =
                                    """Thanks for applying you will be
