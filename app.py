@@ -45,21 +45,21 @@ def upload_file():
             print("he is eligible")
             s.login("jobmatch28@gmail.com", "jobmatch1234")
             TEXT = "Hello "+name + ",\n\n"+ """Thanks for applying to the
-            job post AI/ML Developer, Your skils matches our requirement.
+            job post AI/ML; Developer, Your skils matches our requirement.
             Kindly Let us know the available time for initial round of interview.
-            \n\n\n\n Thanks and Regards, In In Talent acquistition Team, In In Smartbridge"""
+            \n\n Thanks and Regards, \n \n Talent acquistition Team, \n Jobmatch"""
             message = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
             s.sendmail("jobmatch28@gmail.com", email, message)
             s.quit()
             return render_template('form.html',prediction =
-                                   """Thanks for applying youwill be mailed about
+                                   """Thanks for applying you will be mailed about
                                    your candidature""")
         else:
             print("sorry we cant process your candidature")
             s.login("jobmatch28@gmail.com","jobmatch1234")
             TEXT = "Hello "+name + ", \n\n"+ """Thanks for applying to the job post AI/ML
             Developer , Your candidature is rejected.
-            \n\n\n\n Thanks and Regards, \n\n Talent acquistition Team, \n\n Startbridge"""
+            \n\n\n\n Thanks and Regards, \n\n Talent acquistition Team, \n\n Jobmatch"""
             message = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
             s.sendmail("jobmatch28@gmail.com", email, message)
             s.quit()
