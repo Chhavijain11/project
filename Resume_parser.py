@@ -57,7 +57,7 @@ java_skills = []
 
 
 # extract the skills from resume
-data = ResumeParser('').get_extracted_data()
+data = ResumeParser(r'C:\Users\Chhavi Jain\OneDrive\Desktop\VS FILES\externship project\sample resume2.pdf').get_extracted_data()
 print (data)
 # grab the name
 name = data ['name']
@@ -82,7 +82,7 @@ if (len(Skills_matched) >= 4 ):
     
     print("he is eligible")
     # create a text that is to sent in an email
-    TEXT = "Hello "+name + ",\n\n"+"Thanks for applying to the job post AI/ML Developer ."+"Your skils matches our requirement. Kindly let us "+"know the available time for initial round of interview. "+"\n\n\n\n Thanks and Regards, "+"\n\n Talent acquisition Team, \n\n Smartbridge"
+    TEXT = "Hello "+name + ",\n\n"+"Thanks for applying to the job post AI/ML Developer ."+"Your skils matches our requirement. Kindly let us "+"know the available time for initial round of interview. "+"\n\n\n\n Thanks and Regards, "+"\n\n Talent acquisition Team, \n\n Jobmatch"
     # send mail
     message = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
     # send the mail
@@ -92,7 +92,7 @@ if (len(Skills_matched) >= 4 ):
 else:
     print("sorry we cant process your candidature")
     
-    TEXT = "Hello "+name + ",\n\n"+"Thanks for applying to the job post AI/ML Developer, "+"Your candidature is rejected. "+"\n\n\n\n Thanks and Regards, "+"\n\n Talent acquisition Team, \n\n Smartbridge"
+    TEXT = "Hello "+name + ",\n\n"+"Thanks for applying to the job post AI/ML Developer, "+"Your candidature is rejected. "+"\n\n\n\n Thanks and Regards, "+"\n\n Talent acquisition Team, \n\n Jobmatch"
     message = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
     s.sendmail("jobmatch28@gmail.com", email, message)
     s.quit()
