@@ -17,12 +17,13 @@ from googleapiclient.errors import HttpError
 
 
 creds = None
+SCOPES = ['https://www.googleapis.com/auth/gmail.send']
 
 # The file token.json stores the user's access and refresh tokens, and is
 # created automatically when the authorization flow completes for the first
 # time.
 if os.path.exists('token.json'):
-    creds = Credentials.from_authorized_user_file('token.json', SCOPES)
+    creds = credentials.Credentials.from_authorized_user_file('token.json', SCOPES)
 
 # If there are no (valid) credentials available, let the user log in.
 if not creds or not creds.valid:
@@ -44,7 +45,7 @@ s = smtplib.SMTP('smtp.gmail.com', 587)
 s.starttls ()
 
 # Authentication
-s.login("jobmatch28@gmail.com","jobmatch1234")
+#s.login("jobmatch28@gmail.com","jobmatch1234")
 
 # give a subject
 SUBJECT = "Interview Call"
